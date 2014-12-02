@@ -245,7 +245,7 @@ namespace Project1_final
                 {
                     if (tbConfig_Name.Text == item.Element("Address").Value) trung = true;
                 }
-                if (trung == true) MessageBox.Show("Dia chi da ton tai");
+                if (trung == true) MessageBox.Show("Địa chỉ đã tồn tại");
                 else
                 {
                     ///ghi ra file xml
