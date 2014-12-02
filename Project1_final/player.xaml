@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="player" Height="450" Width="596.269" ResizeMode="NoResize" Loaded="load" >
     <Grid MouseEnter="Gridfull_MouseEnter" MouseLeave="Gridfull_MouseLeave">
-        <MediaElement Name="fullscreen" Source=".\\video_tutorial.mp4"  LoadedBehavior="Manual" UnloadedBehavior="Pause" Stretch="Fill" HorizontalAlignment="Left" Height="421" Margin="-3,-2,0,0" VerticalAlignment="Top" Width="591"/>
+        <MediaElement Name="fullscreen" Source="..\..\\video_tutorial.mp4"  LoadedBehavior="Manual" UnloadedBehavior="Pause" Stretch="Fill" HorizontalAlignment="Left" Height="421" Margin="-3,-2,0,0" VerticalAlignment="Top" Width="591"/>
         <Grid Name="navfull" Width="588" Height="29" HorizontalAlignment="Right" Margin="0,363,0,0" VerticalAlignment="Top" OpacityMask="#FF646464">
             <Grid.Background>
                 <SolidColorBrush Color="#FF7C7C7C" Opacity="0.7"/>

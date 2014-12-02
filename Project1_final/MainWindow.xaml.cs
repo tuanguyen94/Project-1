@@ -39,8 +39,19 @@ namespace Project1_final
         {
             //lay duong dan hien tai
             string a=System.IO.Directory.GetCurrentDirectory().ToString();
-            string Filename = a + "\\test.xml";
+            string Filename = a + @"\..\..\\test.xml";
             return Filename;
+        }
+        /// <summary>
+        /// Hàm chạy khi chương trình bắt đầu chạy, load data từ file test.xml cho datacontext rồi load vào combobox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void load(object sender, RoutedEventArgs e)
+        {
+            string FileName = getXMLUri();
+            ProfilesData.Source = null;
+            ProfilesData.Source = new Uri(FileName);
         }
         
         /// <summary>
@@ -224,6 +235,7 @@ namespace Project1_final
        /// <param name="e"></param>
         private void save_click(object sender, RoutedEventArgs e)
         {
+                //Lấy đường dẫn file Test.xml
                 string FileName = getXMLUri();
                 string data = File.ReadAllText(FileName);
                 XDocument xmlDoc = XDocument.Parse(data);                
@@ -414,10 +426,7 @@ namespace Project1_final
             myMediaElement.Pause();
             pl.Show();
         }
-
-        
-
-        
+      
         
        
     }

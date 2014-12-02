@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Profiles>
+  <Profile>
+    <Address>Home</Address>
+    <IP>192.168.100.12</IP>
+    <Subnet>255.255.255.0</Subnet>
+    <Gateway>192.168.100.1</Gateway>
+    <DNS>8.8.8.8</DNS>
+    <Hostname>Tuanguyen</Hostname>
+  </Profile>
+  <Profile>
+    <Address>Office</Address>
+    <IP>192.168.1.100</IP>
+    <Subnet>255.255.255.0</Subnet>
+    <Gateway>192.168.1.1</Gateway>
+    <DNS>8.8.4.4</DNS>
+    <Hostname>Tuanguyen</Hostname>
+  </Profile>
+  <Profile>
+    <Address>company</Address>
+    <IP>192.168.1.13</IP>
+    <Subnet>255.255.255.0</Subnet>
+    <Gateway>192.168.1.1</Gateway>
+    <DNS>8.8.8.8</DNS>
+    <Hostname>boss</Hostname>
+  </Profile>
+  <Profile>
+    <Address>Lab</Address>
+    <IP>192.168.100.13</IP>
+    <Subnet>255.255.255.0</Subnet>
+    <Gateway>192.168.100.1</Gateway>
+    <DNS>8.8.4.4</DNS>
+    <Hostname>Tuanguyen</Hostname>
+  </Profile>
+  <Profile>
+    <Address>class</Address>
+    <IP>192.168.15.15</IP>
+    <Subnet>255.255.255.0</Subnet>
+    <Gateway>192.168.15.1</Gateway>
+    <DNS>8.8.8.8</DNS>
+    <Hostname>Tuan</Hostname>
+  </Profile>
+</Profiles>

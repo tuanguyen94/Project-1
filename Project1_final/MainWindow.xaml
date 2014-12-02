@@ -4,9 +4,9 @@
                
         xmlns:ToggleSwitch="clr-namespace:ToggleSwitch;assembly=ToggleSwitch" x:Class="Project1_final.MainWindow"
                
-        Title="MainWindow" Height="438" Width="616" ResizeMode="NoResize">
+        Title="MainWindow" Height="438" Width="616" ResizeMode="NoResize" Loaded="load">
     <Window.DataContext>
-        <XmlDataProvider x:Name="ProfilesData" Source="E:\\test.xml"  XPath="Profiles" />
+        <XmlDataProvider x:Name="ProfilesData"  XPath="Profiles" />
     </Window.DataContext>
 
     <Grid>
@@ -47,7 +47,7 @@
                         </TransformGroup>
                     </Grid.RenderTransform>
 
-                    <MediaElement Name="myMediaElement" Source=".\\video_tutorial.mp4" LoadedBehavior="Manual" UnloadedBehavior="Pause" Stretch="Fill" HorizontalAlignment="Right" Height="217" VerticalAlignment="Top" Width="342"/>
+                    <MediaElement Name="myMediaElement" Source="..\..\\video_tutorial.mp4" LoadedBehavior="Manual" UnloadedBehavior="Pause" Stretch="Fill" HorizontalAlignment="Right" Height="217" VerticalAlignment="Top" Width="342"/>
                     <Grid Name="nav" Width="342" Height="29" HorizontalAlignment="Right" Margin="0,178,0,0" VerticalAlignment="Top" OpacityMask="#FF646464">
                         <Grid.Background>
                             <SolidColorBrush Color="#FF7C7C7C" Opacity="0.7"/>
