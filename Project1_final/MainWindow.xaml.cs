@@ -17,7 +17,6 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
 using System.Windows.Threading;
-using Microsoft.ApplicationBlocks.Data;
 using System.ComponentModel;
 using System.Xml.Linq;
 
