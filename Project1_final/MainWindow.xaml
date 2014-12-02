@@ -1,0 +1,226 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+               
+        xmlns:ToggleSwitch="clr-namespace:ToggleSwitch;assembly=ToggleSwitch" x:Class="Project1_final.MainWindow"
+               
+        Title="MainWindow" Height="438" Width="616" ResizeMode="NoResize">
+    <Window.DataContext>
+        <XmlDataProvider x:Name="ProfilesData" Source="E:\\test.xml"  XPath="Profiles" />
+    </Window.DataContext>
+
+    <Grid>
+        <Image HorizontalAlignment="Left" Height="60" Margin="0,0,0,0" VerticalAlignment="Top" Width="600" Source="header.jpg" OpacityMask="Black"/>
+        <Image Margin="0,360,0,0" Source="footer.jpg" Stretch="Fill" VerticalAlignment="Bottom"/>
+        <TabControl HorizontalAlignment="Center" Height="300" Margin="0,60,0,0" VerticalAlignment="Top" Width="604" RenderTransformOrigin="0.5,0.5" IsSynchronizedWithCurrentItem="True" SelectionChanged="change_background">
+
+            <TabControl.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-180"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TabControl.RenderTransform>
+            <TabItem x:Name="about" Width="150" Height="75" RenderTransformOrigin="0.5,0.5">
+                <TabItem.Header>
+                    <Image x:Name="image_about" Source="tab_about.jpg" Stretch="Fill"/>
+                </TabItem.Header>
+                <TabItem.Background >
+                    <ImageBrush ImageSource="tab_about.jpg"/>
+                </TabItem.Background>
+                <TabItem.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-180"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TabItem.RenderTransform>
+                <Grid MouseLeave="Grid_MouseLeave" MouseEnter="Grid_MouseEnter" RenderTransformOrigin="0.5,0.5">
+                    <Grid.Background>
+                        <ImageBrush ImageSource="video_bg.jpg"/>
+                    </Grid.Background>
+                    <Grid.RenderTransform>
+                        <TransformGroup>
+                            <RotateTransform Angle="-180"/>
+                        </TransformGroup>
+                    </Grid.RenderTransform>
+
+                    <MediaElement Name="myMediaElement" Source=".\\video_tutorial.mp4" LoadedBehavior="Manual" UnloadedBehavior="Pause" Stretch="Fill" HorizontalAlignment="Right" Height="217" VerticalAlignment="Top" Width="342"/>
+                    <Grid Name="nav" Width="342" Height="29" HorizontalAlignment="Right" Margin="0,178,0,0" VerticalAlignment="Top" OpacityMask="#FF646464">
+                        <Grid.Background>
+                            <SolidColorBrush Color="#FF7C7C7C" Opacity="0.7"/>
+                        </Grid.Background>
+
+                        <Button Name="bt_pause" Content="pause"  HorizontalAlignment="Left" Margin="28,5,0,0" VerticalAlignment="Top"  BorderThickness="1,6,1,1" BorderBrush="#FF1CCF24" Click="bt_pause_Click">
+                            <Button.Template>
+                                <ControlTemplate>
+                                    <Ellipse Height="20"  Width="20">
+                                        <Ellipse.Fill>
+                                            <ImageBrush ImageSource="pause.png"/>
+                                        </Ellipse.Fill>
+                                    </Ellipse>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                        <Button Name="bt_play" Content="play" HorizontalAlignment="Left"  Margin="69,5,0,0" VerticalAlignment="Top" Click="bt_play_Click" >
+                            <Button.Template>
+                                <ControlTemplate>
+                                    <Ellipse Height="20"  Width="20">
+                                        <Ellipse.Fill>
+                                            <ImageBrush ImageSource="play.png"/>
+                                        </Ellipse.Fill>
+                                    </Ellipse>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                        <Button Name="bt_stop" Content="stop" HorizontalAlignment="Left"  Margin="112,5,0,0" VerticalAlignment="Top" Click="bt_stop_Click" >
+                            <Button.Template>
+                                <ControlTemplate>
+                                    <Ellipse Height="20"  Width="20">
+                                        <Ellipse.Fill>
+                                            <ImageBrush ImageSource="stop.png"/>
+                                        </Ellipse.Fill>
+                                    </Ellipse>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                        <Slider Name="volume" HorizontalAlignment="Left" Height="20" Margin="180,5,0,0" Minimum="0" Maximum="1" Value="0.5" VerticalAlignment="Top" Width="105" ValueChanged="Slider_ValueChanged" Foreground="#FF2F7A63"/>
+                        <Button Content="" HorizontalAlignment="Left" Margin="292,5,0,0" VerticalAlignment="Top" Width="26" Height="20" Click="Button_Click">
+                            <Button.Background>
+                                <ImageBrush ImageSource="fullscreen.jpg"/>
+                            </Button.Background>
+                        </Button>
+
+                    </Grid>
+                    <Label Content="Project 1" HorizontalAlignment="Left" Height="31" Margin="20,30,0,0" VerticalAlignment="Top" Width="191" Foreground="#FFF7F1F1"/>
+                    <Label Content="Phần mềm đổi IP, Subnet, DNS," HorizontalAlignment="Left" Height="31" Margin="20,50,0,0" VerticalAlignment="Top" Width="191" Foreground="#FFF7F1F1"/>
+                    <Label Content="Gateway, Hostname" HorizontalAlignment="Left" Height="31" Margin="20,70,0,0" VerticalAlignment="Top" Width="191" Foreground="#FFF7F1F1"/>
+                    <Label Content="Thiết kế và thực hiện:" HorizontalAlignment="Left" Height="31" Margin="20,100,0,0" VerticalAlignment="Top" Width="191" Foreground="#FFF7F1F1"/>
+                    <Label Content="Nguyễn Mạnh Tuấn" HorizontalAlignment="Left" Height="31" Margin="20,120,0,0" VerticalAlignment="Top" Width="191" Foreground="#FFF7F1F1"/>
+                    <Label Content="20122695" HorizontalAlignment="Left" Height="31" Margin="20,140,0,0" VerticalAlignment="Top" Width="191" Foreground="#FFF7F1F1"/>
+
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="profile" Width="150" Height="75" RenderTransformOrigin="0.5,0.5">
+
+                <TabItem.Header>
+                    <Grid Margin="0">
+                        <Image x:Name="image_profile" Source="tab_profile.jpg" Stretch="Fill"/>
+                    </Grid>
+                </TabItem.Header>
+                <TabItem.Background>
+                    <ImageBrush ImageSource="tab_profile.jpg"/>
+                </TabItem.Background>
+                <TabItem.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-180"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TabItem.RenderTransform>
+                <Grid RenderTransformOrigin="0.5,0.5" Background="#FFF3F3F3">
+                    <Grid.RenderTransform>
+                        <TransformGroup>
+                            <RotateTransform Angle="-180"/>
+                        </TransformGroup>
+                    </Grid.RenderTransform>
+
+                    <Label Content="IP :" HorizontalAlignment="Left" Margin="260,50,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Subnet :" HorizontalAlignment="Left" Margin="260,70,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Gateway :" HorizontalAlignment="Left" Margin="260,90,0,0" VerticalAlignment="Top"/>
+                    <Label Content="DNS :" HorizontalAlignment="Left" Margin="260,110,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Hostname :" HorizontalAlignment="Left" Margin="260,130,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Saved profile information" HorizontalAlignment="Left" Margin="258,13,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Segoe UI Semibold"/>
+                    <TextBlock x:Name="txtIP_profile" Text="Your ip here" HorizontalAlignment="Left"  Margin="388,54,65,0"  VerticalAlignment="Top" Width="120"/>
+                    <TextBlock x:Name="txtSubnet_profile" Text="Your Subnet here" HorizontalAlignment="Left"  Margin="388,74,65,0"  VerticalAlignment="Top" />
+                    <TextBlock x:Name="txtGateway_profile" Text="Your Gateway here" HorizontalAlignment="Left"  Margin="388,94,65,0"  VerticalAlignment="Top" />
+                    <TextBlock x:Name="txtDNS_profile" Text="Your DNS here" HorizontalAlignment="Left" Margin="388,114,65,0"  VerticalAlignment="Top" />
+                    <TextBlock x:Name="txtHostname_profile" Text="Your Hostname here" HorizontalAlignment="Left"  Margin="388,134,0,0" VerticalAlignment="Top" />
+
+
+                    <Image Source="profile.png" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="65,45,0,0"  Width="90"/>
+                    <ComboBox Name="cbInfo" ItemsSource="{Binding XPath=Profile/Address}" SelectionChanged="cbinfo_SelectionChanged" HorizontalAlignment="Left" Margin="32,170,0,0" VerticalAlignment="Top" Width="164" Height="25"/>
+                    <Button Name="bt_saved_set" Content="Set" HorizontalAlignment="Left" Margin="315,170,0,0" VerticalAlignment="Top" Width="125" Height="25" Foreground="#FFF9F1F1" Background="#FF4F916B" Click="bt_saved_set_Click" />
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="config" Width="150" Height="75" RenderTransformOrigin="0.5,0.5" >
+                <TabItem.Header>
+                    <Image x:Name="image_config" Source="tab_config.jpg" Stretch="Fill"/>
+                </TabItem.Header>
+                <TabItem.Background>
+                    <ImageBrush ImageSource="tab_config.jpg"/>
+                </TabItem.Background>
+                <TabItem.RenderTransform>
+                    <TransformGroup>
+                        <RotateTransform Angle="-180"/>
+                    </TransformGroup>
+                </TabItem.RenderTransform>
+                <Grid RenderTransformOrigin="0.5,0.5" Background="#FFF3F3F3">
+
+                    <Grid.RenderTransform>
+                        <TransformGroup>
+                            <RotateTransform Angle="-180"/>
+                        </TransformGroup>
+                    </Grid.RenderTransform>
+                    <Label Content="Address Name :" HorizontalAlignment="Left" Margin="65,19,0,0" VerticalAlignment="Top"/>
+                    <Label Content="IP :" HorizontalAlignment="Left" Margin="65,44,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Subnet :" HorizontalAlignment="Left" Margin="65,69,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Gateway :" HorizontalAlignment="Left" Margin="65,94,0,0" VerticalAlignment="Top"/>
+                    <Label Content="DNS :" HorizontalAlignment="Left" Margin="65,119,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Hostname :" HorizontalAlignment="Left" Margin="65,144,0,0" VerticalAlignment="Top"/>
+                    <TextBox Name="tbConfig_Name" HorizontalAlignment="Left" Height="23" Margin="188,19,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
+                    <TextBox Name="tbConfig_IP" HorizontalAlignment="Left" Height="23" Margin="188,44,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
+                    <TextBox Name="tbConfig_Subnet" HorizontalAlignment="Left" Height="23" Margin="188,69,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
+                    <TextBox Name="tbConfig_Gateway" HorizontalAlignment="Left" Height="23" Margin="188,94,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
+                    <TextBox Name="tbConfig_DNS" HorizontalAlignment="Left" Height="23" Margin="188,119,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
+                    <TextBox Name="tbConfig_Hostname" HorizontalAlignment="Left" Height="23" Margin="188,144,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
+
+                    <Image Source="config.png" Width="90" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,49,65,0"/>
+                    <Button Name="btConfig_set" Click="set_click" Content="Set" HorizontalAlignment="Right" Margin="0,181,65,0" VerticalAlignment="Top" Width="88" Height="25" Background="#FF4F916B" Foreground="#FFF5F1F1"/>
+                    <Button Name="btConfig_save" Click="save_click" Content="Save" HorizontalAlignment="Left" Margin="299,181,0,0" VerticalAlignment="Top" Width="88" Height="25" Background="#FF4F916B" Foreground="#FFF5EFEF"/>
+
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="status" Width="150" Height="75" RenderTransformOrigin="0.5,0.5">
+                <TabItem.Header>
+                    <Image x:Name="image_status" Source="tab_status.jpg" Stretch="Fill"/>
+                </TabItem.Header>
+                <TabItem.Background>
+                    <ImageBrush ImageSource="tab_status.jpg" />
+                </TabItem.Background>
+                <TabItem.RenderTransform>
+                    <TransformGroup>
+                        <RotateTransform Angle="-180"/>
+                    </TransformGroup>
+                </TabItem.RenderTransform>
+                <Grid RenderTransformOrigin="0.5,0.5" Background="#FFF3F3F3" Margin="-3,1,3,-1">
+                    <Grid.RenderTransform>
+                        <TransformGroup>
+                            <RotateTransform Angle="-180"/>
+                        </TransformGroup>
+                    </Grid.RenderTransform>
+                    <Image Source="status.png" Width="165" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="65,45,0,0"/>
+                    <Label Name="lblalert1" Content="There are no conection " Width="200" HorizontalAlignment="Left" Margin="260,65,0,0" VerticalAlignment="Top" FontSize="18" />
+                    <Label Name="lblalert2" Content="Please check the internet " Width="206" HorizontalAlignment="Left" Margin="260,95,0,0" VerticalAlignment="Top" FontSize="18" />
+                    <Label Name="lblIP" Content="IP :" Visibility="Hidden" HorizontalAlignment="Left" Margin="260,65,0,0" VerticalAlignment="Top"/>
+                    <Label Name="lblSubnet" Content="Subnet :" Visibility="Hidden" HorizontalAlignment="Left" Margin="260,85,0,0" VerticalAlignment="Top"/>
+                    <Label Name="lblGateway" Content="Gateway :" Visibility="Hidden" HorizontalAlignment="Left" Margin="260,105,0,0" VerticalAlignment="Top"/>
+                    <Label Name="lblDNS" Content="DNS :" Visibility="Hidden" HorizontalAlignment="Left" Margin="260,125,0,0" VerticalAlignment="Top"/>
+                    <Label Name="lblhost" Content="Hostname :" Visibility="Hidden" HorizontalAlignment="Left" Margin="260,145,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Your Current Configuration" HorizontalAlignment="Left" Margin="258,23,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Segoe UI Semibold"/>
+                    <TextBlock x:Name="tblIP" Text="Your ip here" Visibility="Hidden" HorizontalAlignment="Left"  Margin="388,65,65,0"  VerticalAlignment="Top" Width="120"/>
+                    <TextBlock x:Name="tblSubnet" Text="Your Subnet here" Visibility="Hidden" HorizontalAlignment="Left"  Margin="388,85,65,0"  VerticalAlignment="Top" />
+                    <TextBlock x:Name="tblGateway" Text="Your Gateway here" Visibility="Hidden" HorizontalAlignment="Left"  Margin="388,105,65,0"  VerticalAlignment="Top" />
+                    <TextBlock x:Name="tblDNS" Text="Your DNS here" Visibility="Hidden" HorizontalAlignment="Left" Margin="388,125,65,0"  VerticalAlignment="Top" />
+                    <TextBlock x:Name="tblHostname" Text="Your Hostname here" Visibility="Hidden" HorizontalAlignment="Left"  Margin="388,145,0,0" VerticalAlignment="Top" />
+                    <Button Name="btReset" Content="Reset to default" Click="reset" HorizontalAlignment="Left" Margin="387,176,0,0" VerticalAlignment="Top" Width="110" Height="25" Background="#FF4F916B" Foreground="#FFFBF5F5"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+
+    </Grid>
+</Window>
